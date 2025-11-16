@@ -1,10 +1,9 @@
 {
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "homepage": "http://2gPigeon.github.io/janken-app"
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  }
+    "deploy": "gh-pages -d ."
+  },
+  "homepage": "http://2gPigeon.github.io/janken-app"
 }

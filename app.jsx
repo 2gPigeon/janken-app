@@ -16,10 +16,10 @@ function getPeerConfigFromLocation() {
   const server = params.get("server"); // 'cloud' | 'local'
   if (server === "cloud" || window.location.protocol === "https:") {
     return {
-      host: params.get("host") || "p2p-server-zf0x.onrender.com/",
+      host: params.get("host") || "p2p-server-zf0x.onrender.com",
       port: Number(params.get("port") || 10000),
       secure: parseBool(params.get("secure"), true),
-      path: params.get("path") || "/",
+      path: params.get("path") || "/myapp",
       debug: 2,
     };
   }
