@@ -16,13 +16,10 @@ function getPeerConfigFromLocation() {
   const server = params.get("server"); // 'cloud' | 'local'
   console.log(params);
   if (server === "cloud" || window.location.protocol === "https:") {
-    console.log(params.get("port"));
     return {
-      host: "p2p-server-zf0x.onrender.com",
-      port: 10000,
+      host: "https://p2p-server-zf0x.onrender.com",
       secure: true,
       path: "/myapp",
-      debug: 2,
     };
   }
   // default local (HTTP/file)
