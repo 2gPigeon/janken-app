@@ -14,12 +14,14 @@ function parseBool(v, def) {
 function getPeerConfigFromLocation() {
   const params = new URLSearchParams(window.location.search);
   const server = params.get("server"); // 'cloud' | 'local'
+  console.log(params);
   if (server === "cloud" || window.location.protocol === "https:") {
+    console.log(params.get("port"));
     return {
-      host: params.get("host") || "p2p-server-zf0x.onrender.com",
-      port: Number(params.get("port") || 10000),
-      secure: parseBool(params.get("secure"), true),
-      path: params.get("path") || "/myapp",
+      host: "p2p-server-zf0x.onrender.com",
+      port: 10000,
+      secure: true,
+      path: "/myapp",
       debug: 2,
     };
   }
