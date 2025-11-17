@@ -17,8 +17,12 @@ function getPeerConfigFromLocation() {
   console.log(params);
   if (server === "cloud" || window.location.protocol === "https:") {
     return {
-      host: "https://p2p-server-zf0x.onrender.com",
+      // For HTTPS deployments (e.g., GitHub Pages), connect to Render via WSS on the standard port.
+      // PeerJS expects host without protocol; omit port (defaults to 443 when secure: true).
+      host: "p2p-server-zf0x.onrender.com",
       secure: true,
+      // Explicit port 443 is optional; leaving it undefined avoids accidental :10000
+      // port: 443,
       path: "/myapp",
     };
   }
